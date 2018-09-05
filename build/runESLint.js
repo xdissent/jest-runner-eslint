@@ -23,7 +23,7 @@ var runESLint = function runESLint(_ref) {
       CLIEngine = _getLocalESLint.CLIEngine;
 
   var options = getESLintOptions(config);
-  var quiet = !options.cliOptions || options.cliOptions.quiet !== false;
+  var quiet = options.cliOptions && options.cliOptions.quiet;
   var cli = new CLIEngine(Object.assign({}, options.cliOptions, {
     fix: options.cliOptions && (options.cliOptions.fix || options.cliOptions.fixDryRun) && (quiet ? function (_ref2) {
       var severity = _ref2.severity;
